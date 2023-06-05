@@ -9,5 +9,5 @@ if __name__ == '__main__':
     if argc > 1:
         sentence = "arguments:"
     print("{} {}".format(argc, sentence))
-    for i in range (argc):
+    for i in range(argc):
         print("{}: {}".format(i + 1, argv[i]))
