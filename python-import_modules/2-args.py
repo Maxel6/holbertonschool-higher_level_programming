@@ -3,7 +3,7 @@ import sys
 if __name__ == '__main__':
     argv = sys.argv[1:]
     argc = len(argv)
-    sentence = "arguments"
+    sentence = "arguments."
     if argc == 1:
         sentence = "argument:"
     if argc > 1:
