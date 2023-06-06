@@ -7,6 +7,6 @@ def print_matrix_integer(matrix=[[]]):
             if idx != len(matrix[i]):
                 print(" ", end="")
             idx += 1
-        print()
+        print("{}".format('\n'), end="")
         idx = 0
  
