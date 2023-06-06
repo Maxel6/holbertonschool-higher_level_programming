@@ -9,4 +9,3 @@ def print_matrix_integer(matrix=[[]]):
             idx += 1
         print()
         idx = 0
- 
