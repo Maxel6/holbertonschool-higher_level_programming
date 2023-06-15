@@ -41,12 +41,11 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-
     def __str__(self):
         string = ""
         if (self.__width or self.__width) == 0:
             return string
-        
+
         for y in range(0, self.__height):
             for x in range(0, self.__width):
                 string += "#"
