@@ -1,35 +1,22 @@
 #!/usr/bin/python3
-"""
-Function that
-add two integer
-
+"""Module that adds 2 integers and return the sum
+    Args:
+        a (int):  integers or floats
+        b (int):  integers or floats
 """
 
 
 def add_integer(a, b=98):
-    """
-    return the sum of a + b
+    """Function that add two integers or float
+    and return the sum.
     """
     try:
-        if not isinstance(a, (int, float)):
+        if type(a) is not int and type(a) is not float:
             raise TypeError("a must be an integer")
-        if not isinstance(b, (int, float)):
+        if type(b) is not int and type(b) is not float:
             raise TypeError("b must be an integer")
-        sum = int(a) + int(b)
-        return sum
+        a = int(a)
+        b = int(b)
+        return a + b
     except Exception as e:
         return e
-
-print(add_integer(1, 2))
-print(add_integer(100, -2))
-print(add_integer(2))
-print(add_integer(100.3, -2))
-try:
-    print(add_integer(4, "School"))
-except Exception as e:
-    print(e)
-try:
-    print(add_integer(None))
-except Exception as e:
-    print(e)
-  
