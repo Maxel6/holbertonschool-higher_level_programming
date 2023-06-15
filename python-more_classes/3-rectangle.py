@@ -49,5 +49,6 @@ class Rectangle:
         for y in range(0, self.__height):
             for x in range(0, self.__width):
                 string += "#"
-            string += "\n"
+            if y != self.__height - 1:
+                string += "\n"
         return string
