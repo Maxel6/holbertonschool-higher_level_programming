@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Rectangle"""
 
+
 class BaseGeometry():
     """BaseGeometry"""
     def area(self):
@@ -11,6 +12,7 @@ class BaseGeometry():
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
+
 
 class Rectangle(BaseGeometry):
     """Rectangle"""
