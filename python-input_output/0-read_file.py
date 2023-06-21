@@ -4,7 +4,6 @@
 
 def read_file(filename=""):
     """Read a file using with"""
-    with open(filename, 'r') as fichier:
+    with open(filename) as fichier:
         contenu = fichier.read()
-
-    print(contenu)
+        print(contenu)
