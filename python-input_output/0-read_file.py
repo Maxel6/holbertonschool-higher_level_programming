@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Read file"""
+"""read_file"""
 
 
 def read_file(filename=""):
-    """Read a file using with"""
-    with open(filename) as fichier:
-        contenu = fichier.read()
-        print(contenu)
+    """function that reads a text file (UTF8) and prints it to stdout:"""
+    with open(filename) as file:
+        lines = file.read()
+        print(lines, end="")
