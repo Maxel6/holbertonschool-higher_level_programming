@@ -26,7 +26,7 @@ class Rectangle(Base):
     def __str__(self):
         """Returns a string representation of the Rectangle object."""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - \
-            {self.width}/{self.height}"
+{self.width}/{self.height}"
 
     @property
     def width(self):
@@ -82,5 +82,11 @@ class Rectangle(Base):
 
     def display(self):
         """print the rectangle in # symbol"""
-        for h in range (self.height):
+        for h in range(self.height):
             print("#" * self.width)
+
+r1 = Rectangle(4, 6, 2, 1, 12)
+print(r1)
+
+r2 = Rectangle(5, 5, 1)
+print(r2)
