@@ -84,9 +84,3 @@ class Rectangle(Base):
         """print the rectangle in # symbol"""
         for h in range(self.height):
             print("#" * self.width)
-
-r1 = Rectangle(4, 6, 2, 1, 12)
-print(r1)
-
-r2 = Rectangle(5, 5, 1)
-print(r2)
