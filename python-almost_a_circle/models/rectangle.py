@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Import bass class from base.py"""
-
 from base import Base
 
 """First rectangle"""
