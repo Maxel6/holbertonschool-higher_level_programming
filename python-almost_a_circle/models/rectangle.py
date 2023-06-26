@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Import bass class from base.py"""
-from base import Base
+from models.base import Base
 
 """First rectangle"""
 
@@ -22,9 +22,6 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
-
-    def area(self):
-        return self.height * self.width
 
     @property
     def width(self):
@@ -73,3 +70,6 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        return self.height * self.width
