@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Import bass class from base.py"""
-from base import Base
+from models.base import Base
 
 """First rectangle"""
 
