@@ -1,18 +1,31 @@
 #!/usr/bin/python3
 """Import bass class from base.py"""
-from models.base import Base
+
+from base import Base
 
 """First rectangle"""
 
 
 class Rectangle(Base):
     """Class Rectangle"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
+        """A constructor method for the Rectangle class
+
+        Args:
+            width (int): the width of the Rectangle
+            height (int): the height of the Rectangle
+            x (int): the x position of the Recangle
+            y (int): the y position of the Rectangle
+        """
         self.width = width
         self.height = height
         self.x = x
         self.y = y
         super().__init__(id)
+
+    def area(self):
+        return self.height * self.width
 
     @property
     def width(self):
@@ -61,6 +74,3 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-
-    def area(self):
-        return self.height * self.width
