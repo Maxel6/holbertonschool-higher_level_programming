@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Import bass class from base.py"""
-from models.base import Base
+from base import Base
 
 """First rectangle"""
 
@@ -82,5 +82,7 @@ class Rectangle(Base):
 
     def display(self):
         """print the rectangle in # symbol"""
+        print("\n"* self.y, end="")
         for h in range(self.height):
+            print(" " * self.x, end="")
             print("#" * self.width)
