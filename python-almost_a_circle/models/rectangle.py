@@ -24,7 +24,10 @@ class Rectangle(Base):
         super().__init__(id)
 
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        """Returns a string representation of the Rectangle object."""
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - \
+            {self.width}/{self.height}"
+
     @property
     def width(self):
         return self.__width
