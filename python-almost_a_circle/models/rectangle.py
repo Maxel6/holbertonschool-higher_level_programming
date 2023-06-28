@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Import bass class from base.py"""
-from models.base import Base
+from base import Base
 
 """First rectangle"""
 
@@ -98,24 +98,24 @@ class Rectangle(Base):
                 - 5th argument represents y attribute
             **kwargs (dict): New key/value pairs of attributes.
         """
-        if args and len(args) is not 0:
+        if args and len(args) != 0:
             for index, arg in enumerate(args):
-                if index is 0:
+                if index == 0:
                     if arg is None:
                         self.__init__(self.width, self.height, self.x, self.y)
                     else:
                         self.id = arg
 
-                elif index is 1:
+                elif index == 1:
                     self.width = arg
 
-                elif index is 2:
+                elif index == 2:
                     self.height = arg
 
-                elif index is 3:
+                elif index == 3:
                     self.x = arg
 
-                elif index is 4:
+                elif index == 4:
                     self.y = arg
 
         elif kwargs and len(kwargs) != 0:
@@ -140,4 +140,16 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Returns the dictionary representation of a Rectangle"""
-        return self.__dict__
+        arg_dict = {}
+        for key, value in self.__dict__.items():
+            if key == "_Rectangle__x":
+                arg_dict["x"] = value
+            if key == "_Rectangle__y":
+                arg_dict["y"] = value
+            if key == "id":
+                arg_dict["id"] = value
+            if key == "_Rectangle__height":
+                arg_dict["height"] = value
+            if key == "_Rectangle__width":
+                arg_dict["size"] = value
+        return arg_dict
