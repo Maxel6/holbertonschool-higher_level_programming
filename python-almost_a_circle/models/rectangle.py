@@ -87,7 +87,7 @@ class Rectangle(Base):
             print(" " * self.x, end="")
             print("#" * self.width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update the Rectangle.
         Args:
             *args (ints): New attribute values.
@@ -96,18 +96,44 @@ class Rectangle(Base):
                 - 3rd argument represent height attribute
                 - 4th argument represents x attribute
                 - 5th argument represents y attribute
+            **kwargs (dict): New key/value pairs of attributes.
         """
-        for index, arg in enumerate(args):
-            if index is 0:
-                if arg is None:
-                    self.__init__(self.width, self.height, self.x, self.y)
-                else:
-                    self.id = arg
-            elif index is 1:
-                self.width = arg
-            elif index is 2:
-                self.height = arg
-            elif index is 3:
-                self.x = arg
-            elif index is 4:
-                self.y = arg
+        if args and len(args) is not 0:
+            for index, arg in enumerate(args):
+                if index is 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+
+                elif index is 1:
+                    self.width = arg
+
+                elif index is 2:
+                    self.height = arg
+
+                elif index is 3:
+                    self.x = arg
+
+                elif index is 4:
+                    self.y = arg
+
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = value
+
+                elif key == "width":
+                    self.width = value
+
+                elif key == "height":
+                    self.height = value
+
+                elif key == "x":
+                    self.x = value
+
+                elif key == "y":
+                    self.y = value
