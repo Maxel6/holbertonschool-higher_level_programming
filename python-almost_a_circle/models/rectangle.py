@@ -137,3 +137,6 @@ class Rectangle(Base):
 
                 elif key == "y":
                     self.y = value
+
+    def to_dictionary(self):
+        return self.__dict__
