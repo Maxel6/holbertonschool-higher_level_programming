@@ -90,13 +90,13 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """Update the Rectangle.
         Args:
-            *args (ints): New attribute values.
-                - 1st argument represents id attribute
-                - 2nd argument represents width attribute
-                - 3rd argument represent height attribute
-                - 4th argument represents x attribute
-                - 5th argument represents y attribute
-            **kwargs (dict): New key/value pairs of attributes.
+            *args (ints): New keyibute values.
+                - 1st argument represents id keyibute
+                - 2nd argument represents width keyibute
+                - 3rd argument represent height keyibute
+                - 4th argument represents x keyibute
+                - 5th argument represents y keyibute
+            **kwargs (dict): New key/value pairs of keyibutes.
         """
         if args and len(args) != 0:
             for index, arg in enumerate(args):
@@ -140,16 +140,16 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Returns the dictionary representation of a Rectangle"""
-        arg_dict = {}
+        repr_dict = {}
         for key, value in self.__dict__.items():
-            if key == "_Rectangle__x":
-                arg_dict["x"] = value
-            if key == "_Rectangle__y":
-                arg_dict["y"] = value
             if key == "id":
-                arg_dict["id"] = value
-            if key == "_Rectangle__height":
-                arg_dict["height"] = value
-            if key == "_Rectangle__width":
-                arg_dict["size"] = value
-        return arg_dict
+                repr_dict["id"] = value
+            elif key == "_Rectangle__width":
+                repr_dict["width"] = value
+            elif key == "_Rectangle__height":
+                repr_dict["height"] = value
+            elif key == "_Rectangle__x":
+                repr_dict["x"] = value
+            elif key == "_Rectangle__y":
+                repr_dict["y"] = value
+        return repr_dict
