@@ -86,3 +86,19 @@ class Rectangle(Base):
         for h in range(self.height):
             print(" " * self.x, end="")
             print("#" * self.width)
+
+    def update(self, *args):
+        for index, arg in enumerate(args):
+            if index is 0:
+                if arg is None:
+                    self.__init__(self.width, self.height, self.x, self.y)
+                else:
+                    self.id = arg
+            elif index is 1:
+                self.width = arg
+            elif index is 2:
+                self.height = arg
+            elif index is 3:
+                self.x = arg
+            elif index is 4:
+                self.y = arg
