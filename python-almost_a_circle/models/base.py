@@ -54,5 +54,4 @@ class Base:
         dummy = cls(3, 5)
         dummy.x = 0
         dummy.update(**dictionary)
-
         return dummy
