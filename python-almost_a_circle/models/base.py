@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-"""Import Json lib"""
+"""Import Json lib and exists function"""
 import json
+from os.path import exists
+
 """Base class"""
 
 
@@ -55,3 +57,19 @@ class Base:
         dummy.x = 0
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances from a file containing JSON string
+        representation of a class 'cls' object"""
+        filename = f"{cls.__name__}.json"
+
+        if not exists(filename):
+            return []
+        with open(filename, "r") as f:
+            json_str = f.read()
+            json_list = cls.from_json_string(json_str)
+            list_objs = []
+            for dict in json_list:
+                list_objs.append(cls.create(**dict))
+            return list_objs
