@@ -43,6 +43,16 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """return deserialized json_string"""
         if not json_string or len(json_string) == 0:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with attributes already set"""
+        dummy = cls(3, 5)
+        dummy.x = 0
+        dummy.update(**dictionary)
+
+        return dummy
