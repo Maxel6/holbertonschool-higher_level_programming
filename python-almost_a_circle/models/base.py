@@ -37,9 +37,6 @@ class Base:
         for obj in list_objs:
             my_list.append(obj.to_dictionary())
 
-        filename = "{cls.__name__}.json"
+        filename = f"{cls.__name__}.json"
         with open(filename, "w") as f:
-            if not my_list or len(my_list) == 0:
-                json.dump(my_list, "[]")
-
-        json.dump(my_list, filename)
+            f.write(cls.to_json_string(my_list))
