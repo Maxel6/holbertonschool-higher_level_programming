@@ -18,7 +18,7 @@ if __name__ == "__main__":
     session = Session(engine)
     # Query all State objects
     states = session.query(State.id, State.name).filter(State.name.contains
-                                                           ('a'))\
+                                                        ('a'))\
         .order_by(State.id).all()
 
     # Print the id and name of each State object
