@@ -17,9 +17,9 @@ if __name__ == "__main__":
     # Create a session to interact with the database
     session = Session(engine)
     # Query all State objects
-    states = session.query(State).first()
+    states = session.query(State).filter(State.name == sys.argv[4]).first()
 
     if states is None:
-        print("Nothing")
-    # Print the id and name of each State object
-    print(f"{states.id}: {states.name}")
+        print("Not found")
+    else:
+        print(states.id)
